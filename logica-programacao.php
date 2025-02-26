@@ -5,30 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão de PHP com HTML</title>
 
-    <style>
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        }
-    body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        margin: 20px;
-        line-height: 1.6;
-        }
-    h1, h2, h3 {
-        margin-bottom: 20px;
-        }   
-
-    p,code {
-        margin-bottom: 15px;
-        margin-top: 15px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body >
+< >
 
     <h1>Revisando a lógica de programação</h1>
 
@@ -199,8 +178,8 @@ print_r(in_array(40, $meuArray1));
 
 <p>Estruturas de controle são fundamentais na programação para tomar decisões e repetir processos. Vamos aprender sobre as principais estruturas de controle em PHP, como condicionais (if/else/switch) e laços de repetição (for/while/foreach).</p>
 
-<h3>1. Estrutura Condicional - if</h3>
-<p>A estrutura condicional "if" permite executar um bloco de código com base em uma condição.</p>
+<h3>Estrutura Condicional - if</h3>
+<p>A estrutura condicional <code>if</code> permite executar um bloco de código com base em uma condição.</p>
 <code>
     if ($condicao) { 
         // código a ser executado
@@ -208,6 +187,7 @@ print_r(in_array(40, $meuArray1));
 </code>
 
 <p>Exemplo usando um array:</p>
+
 <?php
 $meuArray = array(10, 20, 30, 40);
 
@@ -217,30 +197,42 @@ if (in_array(20, $meuArray)) {
     echo "O valor 20 não está no array.<br>";
 }
 ?>
+<br>
 
-<h3>2. Estrutura Condicional - else</h3>
-<p>O "else" permite executar um código alternativo se a condição do "if" não for verdadeira.</p>
+<h3>Estrutura Condicional - else</h3>
+<p>O <code>else</code> permite executar um código alternativo se a condição do  <code>if</code>  não for verdadeira.</p>
 <code>
-    if ($condicao) { 
-        // código se a condição for verdadeira
-    } else {
-        // código se a condição for falsa
+    if ($condicao) { <br>
+        // código se a condição for verdadeira<br>
+    } else {<br>
+        // código se a condição for falsa <br>
     }
 </code>
 
 <p>Exemplo com else:</p>
-<?php
+
+<p?php
 $valor = 15;
 if ($valor > 10) {
     echo "Valor maior que 10.<br>";
 } else {
     echo "Valor menor ou igual a 10.<br>";
 }
-?>
+?></p>
 
-<h3>3. Estrutura Condicional - switch</h3>
-<p>O "switch" é utilizado para verificar múltiplas condições em uma variável, de forma mais compacta.</p>
-<code>
+
+<code><pre>
+$valor = 15; 
+if ($valor > 10) { 
+    echo "Valor maior que 10.< br >"; 
+} else {
+    echo "Valor menor ou igual a 10.< br >"; 
+}</pre> </code>
+<br>
+<h3>Estrutura Condicional - switch</h3>
+<br>
+<p>O <code>switch</code> é utilizado para verificar múltiplas condições em uma variável, de forma mais compacta.</p>
+<code><pre>
     switch ($variavel) {
         case 'valor1':
             // código para valor1
@@ -251,9 +243,9 @@ if ($valor > 10) {
         default:
             // código padrão se nenhum case for atendido
     }
-</code>
+</pre></code>
 
-<p>Exemplo com switch:</p>
+<p>Exemplo com switch:
 <?php
 $dia = 3;
 switch ($dia) {
@@ -269,15 +261,54 @@ switch ($dia) {
     default:
         echo "Dia inválido<br>";
 }
-?>
+?></p>
 
-<h3>4. Estrutura de Repetição - for</h3>
-<p>O laço "for" é utilizado para repetir um bloco de código um número determinado de vezes.</p>
-<code>
+<code><pre>
+    $dia = 3;
+    switch ($dia) {
+        case 1:
+            echo "Domingo";
+            break;
+        case 2:
+            echo "Segunda-feira";
+            break;
+        case 3:
+            echo "Terça-feira";
+            break;
+        default:
+            echo "Dia inválido";
+}</pre></code>
+
+<h3> Estrutura Condicional - Operador Ternário</h3>
+
+<p>O operador ternário é uma forma compacta de escrever uma estrutura condicional <code>if-else</code>. Ele é utilizado para realizar verificações e retornar um valor com base em uma condição, tudo em uma única linha.</p>
+
+<code><pre>
+    $resultado = (condição) ? valor_se_verdadeiro : valor_se_falso;
+</pre></code>
+
+<p>Exemplo de uso do operador ternário:</p>
+<?php
+$idade = 20;
+$mensagem = ($idade >= 18) ? "Você é maior de idade." : "Você é menor de idade.";
+echo $mensagem;
+?>
+<code><pre>
+
+    $idade = 20;
+    $mensagem = ($idade >= 18) ? "Você é maior de idade." : "Você é menor de idade.";
+    echo $mensagem;
+
+</pre></code>
+
+
+<h3>Estrutura de Repetição - for</h3>
+<p>O laço <code>for</code> é utilizado para repetir um bloco de código um número determinado de vezes.</p>
+<code><pre>
     for ($i = 0; $i < count($meuArray); $i++) {
         // código a ser repetido
     }
-</code>
+</pre></code>
 
 <p>Exemplo com for:</p>
 <?php
@@ -287,13 +318,21 @@ for ($i = 0; $i < count($meuArray); $i++) {
 }
 ?>
 
-<h3>5. Estrutura de Repetição - while</h3>
-<p>O laço "while" executa um bloco de código enquanto uma condição for verdadeira.</p>
-<code>
+<code><pre>
+    echo "Laço for:< br >";
+    for ($i = 0; $i < count($meuArray); $i++) {
+        echo $meuArray[$i] . "< br >";
+    }
+
+</pre></code>
+
+<h3>Estrutura de Repetição - while</h3>
+<p>O laço <code>while</code>  executa um bloco de código enquanto uma condição for verdadeira.</p>
+<code><pre>
     while ($condicao) {
         // código a ser repetido
     }
-</code>
+</pre></code>
 
 <p>Exemplo com while:</p>
 <?php
@@ -304,14 +343,23 @@ while ($i < count($meuArray)) {
     $i++;
 }
 ?>
+<code><pre>
 
-<h3>6. Estrutura de Repetição - foreach</h3>
-<p>O laço "foreach" é usado para percorrer arrays de forma simplificada. Ele é ideal para iterar sobre todos os elementos de um array.</p>
-<code>
+    echo "Laço while:< br >";
+    $i = 0;
+    while ($i < count($meuArray)) {
+        echo $meuArray[$i] . "< br >";
+        $i++;
+    }
+</pre></code>
+
+<h3>Estrutura de Repetição - foreach</h3>
+<p>O laço <code>foreach</code> é usado para percorrer arrays de forma simplificada. Ele é ideal para iterar sobre todos os elementos de um array.</p>
+<code><pre>
     foreach ($meuArray as $item) {
         // código a ser repetido para cada item
     }
-</code>
+</pre></code>
 
 <p>Exemplo com foreach:</p>
 <?php
@@ -320,41 +368,48 @@ foreach ($meuArray as $item) {
     echo $item . "<br>";
 }
 ?>
+<code><pre>
 
-<h3>7. Verificando Existência de Elementos com in_array()</h3>
-<p>Antes de tentar acessar ou operar em um valor dentro de um array, podemos verificar se o valor existe utilizando a função <code>in_array()</code>.</p>
-<?php
-if (in_array(30, $meuArray)) {
-    echo "O valor 30 existe no array.<br>";
-} else {
-    echo "O valor 30 não existe no array.<br>";
-}
-?>
+    echo "Laço foreach:< br >";
+    foreach ($meuArray as $item) {
+        echo $item . "< br >";
+    }
+</pre></code>
+<br>
 
-<h3>8. Adicionando e Removendo Elementos do Array</h3>
-<p>É possível adicionar e remover elementos de um array utilizando funções como <code>array_push()</code> e <code>array_pop()</code>.</p>
-<code>array_push($meuArray, 50);</code><br>
-<code>array_pop($meuArray);</code><br>
+<h1> Exercicios</h1>
 
-<p>Exemplo de adição e remoção:</p>
-<?php
-array_push($meuArray, 50);  // Adiciona 50 ao final
-print_r($meuArray);
-echo "<br>";
+<strong>Lembre-se, ainda não aprendemos a fazer entradas do usuário, por isso os programas não precisam ter interação com o usuário, eles podem conter no próprio código os valores necessários para o programa.</strong>
 
-array_pop($meuArray);  // Remove o último elemento
-print_r($meuArray);
-?>
+<h3>1. Verdadeiro/Falso</h3>
+<p>Usando um operador ternário, crie um programa que realiza comparações entre valores e exibe "Verdadeiro" quando a saida de uma comparação for verdadeira, e "Falso" quando a saída for falsa.</p>
 
-<h3>9. Contando o Número de Elementos do Array</h3>
-<p>Para contar os elementos de um array, utilizamos a função <code>count()</code>.</p>
-<?php
-echo "Número de elementos no array: " . count($meuArray) . "<br>";
-?>
+<h3>2. Validação de Idade</h3>
+<p>Crie um programa que leia a idade de uma pessoa e verifique se ela é maior de idade (18 anos ou mais). Use uma estrutura condicional para exibir uma mensagem apropriada de acordo com a idade.</p>
 
-<p><strong>ATENÇÃO!</strong> Certifique-se de sempre verificar os dados dos arrays antes de fazer operações. A utilização de estruturas de controle adequadas pode evitar erros e melhorar a performance do seu código.</p>
+<h3>3. Busca em Array</h3>
+<p>Crie um programa que leia 5 números e os armazene em um array. Após armazenar os números, escolha um número e verifique se ele existe no array. Use o <code>in_array()</code> para realizar a verificação.</p>
 
+<h3>4. Sequência de Fibonacci</h3>
+<p>Crie um programa que gere os primeiros <strong>n</strong> números da sequência de Fibonacci, onde <strong>n</strong> é um número inteiro positivo fornecido pelo usuário. Utilize um laço <code>for</code> para gerar os números da sequência.</p>
 
+<h3>5. Média de Números</h3>
+<p>Crie um programa que leia <strong>n</strong> números inteiros e calcule a média aritmética desses números. Use um laço <code>for</code> para somar os números e calcular a média.</p>
+
+<h3>6. Verificação de Números Pares e Ímpares</h3>
+<p>Crie um programa que percorra um array de 10 números inteiros e verifique se cada número é par ou ímpar. Utilize a estrutura de repetição <code>for</code> e a estrutura condicional <code>if</code> para verificar se o número é par ou ímpar. Exiba uma mensagem para cada número indicando se é par ou ímpar.</p>
+
+<h3>7. Maior e Menor Número de um Array</h3>
+<p>Crie um programa que tenha um array de números e determine qual é o maior e o menor número do array. Utilize a estrutura de repetição <code>foreach</code> para percorrer os elementos do array e a estrutura condicional <code>if</code> para determinar o maior e o menor valor.</p>
+
+<h3>8. Reversão de Array</h3>
+<p>Crie um programa que tenha um array de 10 números inteiros e inverta a ordem dos elementos do array. Utilize a estrutura de repetição <code>for</code> para percorrer o array de trás para frente e armazenar o resultado em um novo array.</p>
+
+<h3>9. Soma de Elementos de um Array</h3>
+<p>Crie um programa que tenha um array de números inteiros e calcule a soma de todos os seus elementos. Utilize a estrutura de repetição <code>foreach</code> para iterar sobre o array e somar os valores.</p>
+
+<h3>10. Substituição de Valores em um Array</h3>
+<p>Crie um programa que percorra um array de 10 números e substitua todos os valores menores que 5 por 0. Utilize a estrutura de repetição <code>foreach</code> e a estrutura condicional <code>if</code> para realizar a substituição.</p>
 
 </body>
 </html>
