@@ -185,7 +185,6 @@ echo gettype($meuArray1);
     print_r($meuArray1);
 ?>
 </p>
-
 <h3>Verificando se um valor existe no array</h3>
 <br><p> Para verificar se determinado valor está no array, usa-se o método <code>inarray()</code> com dois argumentos, sendo o primeiro o valor que se está procurando e o segundo o array. O retorno pode ser 1 (true) ou vazio (false).
 <br><code>in_array(40, $meuArray)</code><br>
