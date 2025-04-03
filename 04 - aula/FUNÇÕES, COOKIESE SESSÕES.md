@@ -168,42 +168,7 @@ No primeiro parâmetro declara-se o nome do cookie que deseja-se remover. Neste 
 A seguir, o preenchimento da variável  `"usuario"` com valor vazio `""`.
 
  Por fim, a data de expiração do cookie é definida para uma hora atrás `time() - 3600` ( `3600` segundos = 1 hora).
-
-## Atividade Prática
-
-##### 1) Crie e registre um cookie no formulário criado anteriormente.
-##### 2) Registre mais de uma variável.
-
-Alguns exemplos para servir de inspiração.
-
-```php
-<?php
-setcookie("usuario", "João", time() + (86400 * 30));
-setcookie("email", "joao@example.com", time() + (86400 * 30));
-setcookie("preferencias", "escuro", time() + (86400 * 30)); 
-?>
-```
-
-
-```php
-<?php
-if (isset($_COOKIE['usuario']) && isset($_COOKIE['email']) && isset($_COOKIE['preferencias'])) {
-    echo "Bem-vindo de volta, " . $_COOKIE['usuario'] . " (" . $_COOKIE['email'] . ").";
-    echo " Sua preferência de tema é " . $_COOKIE['preferencias'] . ".";
-} else {
-    echo "Olá, visitante!";
-}
-?>
-```
-
-```php
-<?php
-setcookie("usuario", "", time() - 3600);
-setcookie("email", "", time() - 3600); 
-setcookie("preferencias", "", time() - 3600);
-?>
-```
-
+ 
 ---
 
 # Sessões
@@ -289,7 +254,43 @@ session_destroy();
 
 # Desafio
 
-#### Crie um formulário post que salva os dados com cookies.
+## Atividade Prática
+
+##### 1) Crie e registre um cookie no formulário criado anteriormente.
+##### 2) Registre todas as váriáveis do formulário.
+##### 3) Em uma segunda página HTML, recupere e exiba os dados registrados.
+
+Alguns exemplos para servir de inspiração.
+
+```php
+<?php
+setcookie("usuario", "João", time() + (86400 * 30));
+setcookie("email", "joao@example.com", time() + (86400 * 30));
+setcookie("preferencias", "escuro", time() + (86400 * 30)); 
+?>
+```
+
+
+```php
+<?php
+if (isset($_COOKIE['usuario']) && isset($_COOKIE['email']) && isset($_COOKIE['preferencias'])) {
+    echo "Bem-vindo de volta, " . $_COOKIE['usuario'] . " (" . $_COOKIE['email'] . ").";
+    echo " Sua preferência de tema é " . $_COOKIE['preferencias'] . ".";
+} else {
+    echo "Olá, visitante!";
+}
+?>
+```
+
+```php
+<?php
+setcookie("usuario", "", time() - 3600);
+setcookie("email", "", time() - 3600); 
+setcookie("preferencias", "", time() - 3600);
+?>
+```
+
+---
 
 ---
 
